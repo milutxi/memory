@@ -1,0 +1,9 @@
+.footer {
+  color: rgb(100, 199, 232);
+  font-size: 12px;
+}
+
+.list {
+  list-style: none;
+  padding: 0px;
+}
