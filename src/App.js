@@ -117,11 +117,11 @@ function App() {
         <Confetti width={windowSize.width} height={windowSize.height} />
       )}
       <Header />
-
       {gameOver ? (
         <GameOver onRestart={handleRestart} />
       ) : (
         <div>
+          <p className="text">Get the pairs before the time catch you</p>
           <section className="secondPart">
             <button onClick={shuffleCards}>New Game</button>
             <div className="timer">
