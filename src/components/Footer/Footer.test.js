@@ -5,8 +5,9 @@ test("Footer is rendered", () => {
     render(<Footer />);
 
     const list = screen.getByRole("list");
-    const listItems = screen.getAllByRole("listitem");
-
     expect(list).toBeInTheDocument();
+    
+    const listItems = screen.getAllByRole("listitem");
     expect(listItems.length).toBe(2);
+
 }) 
