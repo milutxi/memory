@@ -5,5 +5,4 @@ test('renders learn react link', () => {
   render(<App />);
   const linkElement = screen.getByText(/get the pairs/i);
   expect(linkElement).toBeInTheDocument();
-  
 });

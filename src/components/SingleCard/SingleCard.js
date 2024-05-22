@@ -10,9 +10,15 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
 
   return (
     <div className="card">
-      <div className={flipped ? "flipped" : ""}>
-        <img className="front" src={card.src} alt="card front" />
+      <div data-testid="card-inner" className={flipped ? "flipped" : ""}>
         <img
+          data-testid="front-image"
+          className="front"
+          src={card.src}
+          alt="card front"
+        />
+        <img
+          data-testid="back-image"
           className="back"
           src="/img/bullar.png"
           alt="card back"

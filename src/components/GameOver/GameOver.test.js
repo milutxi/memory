@@ -13,7 +13,6 @@ describe ("I want to see the component is rendered and works properly", () => {
         expect(componentTitle).toBeInTheDocument();
         expect(bigTitle).toBeInTheDocument();
         expect(smallTitle).toBeInTheDocument();
-        
     })
 
     test("Restart button is working", () => {

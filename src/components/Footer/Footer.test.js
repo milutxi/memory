@@ -9,5 +9,4 @@ test("Footer is rendered", () => {
     
     const listItems = screen.getAllByRole("listitem");
     expect(listItems.length).toBe(2);
-
 }) 

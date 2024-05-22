@@ -9,4 +9,5 @@ test ("The page title renders", () => {
     
     const title = screen.getByRole("heading", {level:1});
     expect(title).toBeInTheDocument();
+    
 })
