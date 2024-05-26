@@ -35,7 +35,8 @@ function App() {
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
+      .map((card) => ({ ...card, 
+        id: Math.random() }));
 
     setChoiceOne(null);
     setChoiceTwo(null);
@@ -44,7 +45,7 @@ function App() {
     setShowConfetti(false);
     setShowTimer(true);
     setGameOver(false);
-    timerRef.current && timerRef.current.reset(120 * 1000); // reset the timer state
+    timerRef.current && timerRef.current.reset(60 * 1000); // reset the timer state
   };
   // console.log(cards, turns)
 
@@ -114,7 +115,10 @@ function App() {
   return (
     <div className="App">
       {showConfetti && (
-        <Confetti width={windowSize.width} height={windowSize.height} />
+        <Confetti
+          width={windowSize.width}
+          height={windowSize.height}
+        />
       )}
       <Header />
       {gameOver ? (
@@ -122,6 +126,7 @@ function App() {
       ) : (
         <div>
           <p className="text">Get the pairs before the time catch you</p>
+
           <section className="secondPart">
             <button onClick={shuffleCards}>New Game</button>
             <div className="timer">
@@ -129,7 +134,7 @@ function App() {
                 <CountDown
                   ref={timerRef}
                   // duration={2 * 24 * 60 * 60 * 1000}, if i want longer time for future projects(2 days)
-                  duration={120 * 1000}
+                  duration={60 * 1000}
                   onExpire={onExpire}
                 />
               )}

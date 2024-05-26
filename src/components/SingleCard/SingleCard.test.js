@@ -5,18 +5,26 @@ describe("SingleCard component renders and show front and back sida", () => {
     const mockCard = {src:'/img/picture.png'};
     const handleChoice = jest.fn();
 
-    test("renders card front and back images", () => {
+    test("renders card front images", () => {
         render(<SingleCard card={mockCard} />)
 
         const frontImage = screen.getByAltText("card front");
-        const backImage = screen.getByAltText("card back");
         const anotherfrontImage = screen.getByTestId("front-image");
-        const anotherbackImage = screen.getByTestId("back-image");
 
         expect(frontImage).toBeInTheDocument();
-        expect(backImage).toBeInTheDocument();
         expect(anotherfrontImage).toBeInTheDocument();
-        expect(anotherbackImage).toBeInTheDocument();
+              
+        
+    })
+
+    test("renders card back images", () => {
+        render(<SingleCard card={mockCard} />)
+
+        const backImage = screen.getByAltText("card back");
+        const anotherbackImage = screen.getByTestId("back-image");
+
+        expect(backImage).toBeInTheDocument();
+        expect(anotherbackImage).toBeInTheDocument();        
     })
 
     test("calls handleChoice on card click when not disabled", ()=> {

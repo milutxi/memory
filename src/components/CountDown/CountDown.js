@@ -63,16 +63,16 @@ const CountDown = forwardRef(({ duration, onExpire }, ref) => {
     <div className="wrap">
       <div className="content">
         <div className="box">
-          <div className="value">{formattedTime.minutes}</div>
+          <div className="value" data-testid="minutes">{formattedTime.minutes}</div>
           <div className="label">Min.</div>
         </div>
         <div></div>
         <div className="box">
-          <div className="value">{formattedTime.seconds}</div>
-          <div className="label">Sec.</div>
+          <div className="value" data-testid="seconds">{formattedTime.seconds}</div>
+          <div className="label">Seconds</div>
         </div>
         <div className="box">
-          <div className="value">{formattedTime.milliseconds}</div>
+          <div className="value" data-testid="millisec">{formattedTime.milliseconds}</div>
           <div className="label">Millisec.</div>
         </div>
       </div>

@@ -7,14 +7,23 @@ describe ("I want to see the component is rendered and works properly", () => {
         render(<GameOver />);
         
         const componentTitle = screen.getByText(/game over/i);
-        const bigTitle = screen.getByRole("heading", {level:1});
-        const smallTitle = screen.getByRole("heading", {level:5});
-        
         expect(componentTitle).toBeInTheDocument();
-        expect(bigTitle).toBeInTheDocument();
-        expect(smallTitle).toBeInTheDocument();
     })
 
+    test("Game over component has a title level 1", () => {
+        render(<GameOver />);
+        
+        const bigTitle = screen.getByRole("heading", {level:1});
+        expect(bigTitle).toBeInTheDocument();
+    })
+
+    test("The component has a title level 5", () => {
+        render(<GameOver />);
+        
+        const smallTitle = screen.getByRole("heading", {level:5});
+        expect(smallTitle).toBeInTheDocument();       
+    })
+    
     test("Restart button is working", () => {
         const onRestart = jest.fn();
         render(<GameOver onRestart={onRestart} />);
@@ -25,4 +34,12 @@ describe ("I want to see the component is rendered and works properly", () => {
         fireEvent.click(button);
         expect(onRestart).toHaveBeenCalledTimes(1);
     })
+
+    test("renders 'Time Finished' text", () => {
+        render(<GameOver />);
+
+        const timeFinishedText = screen.getByText(/time finished/i);
+        expect(timeFinishedText).toBeInTheDocument();
+    });
+
 })
